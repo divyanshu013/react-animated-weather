@@ -1,7 +1,8 @@
 {
   "name": "react-animated-weather",
   "version": "0.1.0",
-  "private": true,
+  "description": "Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/",
+  "main": "src/ReactAnimatedWeather.js",
   "dependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -15,6 +16,22 @@
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divyanshu013/react-animated-weather.git"
+  },
+  "keywords": [
+    "react",
+    "animated",
+    "weather",
+    "icons"
+  ],
+  "author": "Divyanshu Maithani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divyanshu013/react-animated-weather/issues"
+  },
+  "homepage": "https://divyanshu013.github.io/react-animated-weather/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
