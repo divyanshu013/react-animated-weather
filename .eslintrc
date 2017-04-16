@@ -10,6 +10,7 @@
     "arrow-parens": [1, "always"]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   }
 }
