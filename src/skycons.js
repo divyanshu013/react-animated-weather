@@ -1,4 +1,6 @@
-(function(global) {
+// Skycons by @darkskyapp, https://github.com/darkskyapp/skycons
+
+const skycons = (function(global) {
   "use strict";
 
   /* Set up a RequestAnimationFrame shim so we can animate efficiently FOR
@@ -722,5 +724,9 @@
     }
   };
 
-  global.Skycons = Skycons;
-}(this));
+  // global.Skycons = Skycons;
+  // making it return instead
+  return Skycons
+})(window ? window : global); // check if running on browser or server
+
+export default skycons;
