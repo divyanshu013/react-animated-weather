@@ -1,8 +1,8 @@
 {
   "name": "react-animated-weather",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/",
-  "main": "build/react-animated-weather.js",
+  "main": "build/index.js",
   "dependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -14,6 +14,10 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "react-scripts": "0.9.5"
   },
   "repository": {
@@ -34,7 +38,7 @@
   "homepage": "https://divyanshu013.github.io/react-animated-weather/",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp build/static/js/main.*.js build/react-animated-weather.js",
+    "build": "./node_modules/.bin/babel src/ --out-dir build --copy-files",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
