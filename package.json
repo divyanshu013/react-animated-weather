@@ -1,8 +1,8 @@
 {
   "name": "react-animated-weather",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/",
-  "main": "src/ReactAnimatedWeather.js",
+  "main": "src/index.js",
   "dependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
