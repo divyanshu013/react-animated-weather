@@ -3,8 +3,8 @@
 Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/ :sunny:
 
 [![Build Status](https://travis-ci.org/divyanshu013/react-animated-weather.svg?branch=master)](https://travis-ci.org/divyanshu013/react-animated-weather)
-[![npm](https://img.shields.io/npm/v/react-animated-weather.svg)]()
-[![npm](https://img.shields.io/npm/dt/react-animated-weather.svg)]()
+[![npm](https://img.shields.io/npm/v/react-animated-weather.svg)](https://www.npmjs.com/package/react-animated-weather)
+[![npm](https://img.shields.io/npm/dt/react-animated-weather.svg)](https://www.npmjs.com/package/react-animated-weather)
 
 ![React Animated Weather](./react-animated-weather.gif "React Animated Weather")
 
