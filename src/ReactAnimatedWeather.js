@@ -4,7 +4,7 @@ import skycons from './skycons';
 
 class ReactAnimatedWeather extends React.Component {
   componentDidMount() {
-    const skyconIcon = new skycons({
+    let skyconIcon = new skycons({
       color: this.props.color
     });
 
@@ -14,6 +14,15 @@ class ReactAnimatedWeather extends React.Component {
     }
     // skyconIcon.set(this.skycon, skycons.PARTLY_CLOUDY_NIGHT);
     // skyconIcon.pause();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.icon !== this.props.icon) {
+      let skyconIcon = new skycons({
+        color: this.props.color
+      });
+      skyconIcon.add(this.skycon, skycons[this.props.icon]);
+    }
   }
 
   render() {
