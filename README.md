@@ -22,7 +22,7 @@ yarn add react-animated-weather
 npm install react-animated-weather
 ```
 
-If using `npm`, you might want to save to your `package.json`:
+If using `npm` < 5, you might want to save to your `package.json`:
 
 ```bash
 npm install --save react-animated-weather
@@ -109,6 +109,20 @@ ReactAnimatedWeather.propTypes = {
 };
 ```
 
+## Development
+
+I've added a `storybook` for the component since it has a small number of props and the `storybook` interface is quite good for testing out
+the component. You can fire up the `storybook` by running:
+
+```bash
+yarn storybook
+```
+
+-or-
+
+```bash
+npm run storybook
+```
 
 ## Motivation
 
