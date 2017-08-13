@@ -1,6 +1,6 @@
 {
   "name": "react-animated-weather",
-  "version": "0.1.6",
+  "version": "1.0.1",
   "description": "Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/",
   "main": "build/index.js",
   "dependencies": {
