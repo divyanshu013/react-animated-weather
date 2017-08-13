@@ -12,14 +12,6 @@ class ReactAnimatedWeather extends React.Component {
     });
   }
 
-  setIcon(icon, animate) {
-    this.skyconIcon.add(this.skycon, skycons[icon]);
-
-    if (animate) {
-      this.skyconIcon.play();
-    }
-  }
-
   componentDidMount() {
     this.setIcon(this.props.icon, this.props.animate);
   }
@@ -30,7 +22,15 @@ class ReactAnimatedWeather extends React.Component {
     });
 
     this.setIcon(nextProps.icon, nextProps.animate);
-    this.forceUpdate()
+    this.forceUpdate();
+  }
+
+  setIcon(icon, animate) {
+    this.skyconIcon.add(this.skycon, skycons[icon]);
+
+    if (animate) {
+      this.skyconIcon.play();
+    }
   }
 
   render() {
