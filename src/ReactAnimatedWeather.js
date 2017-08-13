@@ -3,17 +3,34 @@ import PropTypes from 'prop-types';
 import skycons from './skycons';
 
 class ReactAnimatedWeather extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.skyconIcon = new skycons({
+      color: props.color
+    });
+  }
+
+  setIcon(icon, animate) {
+    this.skyconIcon.add(this.skycon, skycons[icon]);
+
+    if (animate) {
+      this.skyconIcon.play();
+    }
+  }
+
   componentDidMount() {
-    const skyconIcon = new skycons({
-      color: this.props.color
+    this.setIcon(this.props.icon, this.props.animate);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.skyconIcon = new skycons({
+      color: nextProps.color
     });
 
-    skyconIcon.add(this.skycon, skycons[this.props.icon]);
-    if (this.props.animate) {
-      skyconIcon.play();
-    }
-    // skyconIcon.set(this.skycon, skycons.PARTLY_CLOUDY_NIGHT);
-    // skyconIcon.pause();
+    this.setIcon(nextProps.icon, nextProps.animate);
+    this.forceUpdate()
   }
 
   render() {
