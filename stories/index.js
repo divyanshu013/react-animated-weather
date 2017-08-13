@@ -10,5 +10,8 @@ stories.addDecorator(withKnobs);
 stories.add('Available props', () => (
   <ReactAnimatedWeather
     icon={text('icon', 'CLEAR_DAY')}
+    animate={boolean('animate', true)}
+    color={text('color', 'goldenrod')}
+    size={number('size', 64)}
   />
 ));
