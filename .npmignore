@@ -1,6 +1,14 @@
 # dependencies
 /node_modules
 
+# stories
+/stories
+/.storybook
+
+# source
+/src
+/public
+
 # testing
 /coverage
 
