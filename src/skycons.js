@@ -727,6 +727,6 @@ const skycons = (function(global) {
   // global.Skycons = Skycons;
   // making it return instead
   return Skycons
-})(window ? window : global); // check if running on browser or server
+})(typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : window); // check if running on browser or server
 
 export default skycons;
