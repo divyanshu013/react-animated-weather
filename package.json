@@ -1,6 +1,6 @@
 {
   "name": "react-animated-weather",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Animated weather component for React inspired by Skycons http://darkskyapp.github.io/skycons/",
   "main": "build/index.js",
   "dependencies": {
@@ -43,6 +43,7 @@
     "build": "./node_modules/.bin/babel src/ --out-dir build --copy-files",
     "test": "react-scripts test --env=jsdom",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
   }
 }
