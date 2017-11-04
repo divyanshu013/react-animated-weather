@@ -131,3 +131,7 @@ I got inspired to write this component from [darkskyapp's](https://github.com/da
 Working with `<canvas>` in virtual DOM is a bit tricky. ReactAnimatedWeather uses a [`ref`](https://facebook.github.io/react/docs/refs-and-the-dom.html) to refer to the DOM holding the `<canvas>` element and render the weather component on `componentDidMount()`.
 
 If you've found any bugs, please open an issue on [github](https://github.com/divyanshu013/react-animated-weather/issues).
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/q3xjLpkNtemt4AX1d12QE6Vi/divyanshu013/react-animated-weather'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/q3xjLpkNtemt4AX1d12QE6Vi/divyanshu013/react-animated-weather.svg' />
+</a>
