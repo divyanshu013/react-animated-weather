@@ -28,6 +28,8 @@ If using `npm` < 5, you might want to save to your `package.json`:
 npm install --save react-animated-weather
 ```
 
+`react-animated-weather` also has peer dependencies on `react`, `react-dom` and `prop-types`.
+
 ## Usage
 
 Import the ReactAnimatedWeather component:
