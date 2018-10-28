@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import skycons from './skycons';
+import Skycons from './skycons';
 
 class ReactAnimatedWeather extends React.Component {
-
   constructor(props) {
     super(props);
 
-    this.skyconIcon = new skycons({
+    this.skyconIcon = new Skycons({
       color: props.color
     });
   }
 
   componentDidMount() {
-    this.setIcon(this.props.icon, this.props.animate);
+    const { icon, animate } = this.props;
+    this.setIcon(icon, animate);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.skyconIcon = new skycons({
+    this.skyconIcon = new Skycons({
       color: nextProps.color
     });
 
@@ -26,7 +26,7 @@ class ReactAnimatedWeather extends React.Component {
   }
 
   setIcon(icon, animate) {
-    this.skyconIcon.add(this.skycon, skycons[icon]);
+    this.skyconIcon.add(this.skycon, Skycons[icon]);
 
     if (animate) {
       this.skyconIcon.play();
@@ -34,11 +34,12 @@ class ReactAnimatedWeather extends React.Component {
   }
 
   render() {
+    const { size } = this.props;
     return (
       <canvas
         ref={(canvas) => { this.skycon = canvas; }}
-        width={this.props.size}
-        height={this.props.size}
+        width={size}
+        height={size}
       />
     );
   }
