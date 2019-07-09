@@ -17,6 +17,14 @@ class ReactAnimatedWeather extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // If color props match, don't reinitialize the icon
+    if (this.skyconIcon.color === nextProps.color) {
+      return;
+    }
+
+    // Remove the old icon
+    this.skyconIcon.remove(this.skycon);
+
     this.skyconIcon = new Skycons({
       color: nextProps.color
     });
@@ -37,7 +45,9 @@ class ReactAnimatedWeather extends React.Component {
     const { size } = this.props;
     return (
       <canvas
-        ref={(canvas) => { this.skycon = canvas; }}
+        ref={canvas => {
+          this.skycon = canvas;
+        }}
         width={size}
         height={size}
       />
