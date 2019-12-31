@@ -1,62 +1,31 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Skycons from './skycons';
 
-class ReactAnimatedWeather extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.skyconIcon = new Skycons({
-      color: props.color
-    });
-  }
-
-  componentDidMount() {
-    const { icon, animate } = this.props;
-    this.setIcon(icon, animate);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // If props match, don't reinitialize the icon
-    const { animate, icon } = this.props;
-    if (
-      this.skyconIcon.color === nextProps.color
-      && animate === nextProps.animate
-      && icon === nextProps.icon
-    ) {
-      return;
-    }
-
-    // Remove the old icon
-    this.skyconIcon.remove(this.skycon);
-
-    this.skyconIcon = new Skycons({
-      color: nextProps.color
-    });
-
-    this.setIcon(nextProps.icon, nextProps.animate);
-    this.forceUpdate();
-  }
-
-  setIcon(icon, animate) {
-    this.skyconIcon.add(this.skycon, Skycons[icon]);
-
-    if (animate) {
-      this.skyconIcon.play();
-    }
-  }
-
-  render() {
-    const { size } = this.props;
-    return (
-      <canvas
-        ref={(canvas) => { this.skycon = canvas; }}
-        width={size}
-        height={size}
-      />
-    );
+function setIcon(icon, animate, skyconIcon, canvas) {
+  skyconIcon.add(canvas, Skycons[icon]);
+  if (animate) {
+    skyconIcon.play();
   }
 }
+
+const ReactAnimatedWeather = ({
+  icon, color, size, animate
+}) => {
+  const skyconCanvas = useRef(null);
+
+  useEffect(() => {
+    const skyconIcon = new Skycons({ color });
+    const canvas = skyconCanvas.current;
+    setIcon(icon, animate, skyconIcon, canvas);
+
+    return () => {
+      skyconIcon.remove(canvas);
+    };
+  }, [icon, color, animate]);
+
+  return <canvas ref={skyconCanvas} width={size} height={size} />;
+};
 
 ReactAnimatedWeather.defaultProps = {
   animate: true,
