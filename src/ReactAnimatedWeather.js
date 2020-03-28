@@ -15,14 +15,14 @@ const ReactAnimatedWeather = ({
   const skyconCanvas = useRef(null);
 
   useEffect(() => {
-    const skyconIcon = new Skycons({ color });
+    const skyconIcon = new Skycons({ color, resizeClear: true });
     const canvas = skyconCanvas.current;
     setIcon(icon, animate, skyconIcon, canvas);
 
     return () => {
       skyconIcon.remove(canvas);
     };
-  }, [icon, color, animate]);
+  }, [icon, color, animate, size]);
 
   return <canvas ref={skyconCanvas} width={size} height={size} />;
 };
